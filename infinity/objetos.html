@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script src="">
+        // Criando o objeto aluno
+        const aluno = {
+        nome: "Marlla",
+        notas: [8.5, 9.0, 7.5],
+
+        // Método para calcular a média
+        calcularMedia() {
+            const soma = this.notas.reduce((total, nota) => total + nota, 0);
+            return soma / this.notas.length;
+        }
+        };
+
+        // Desestruturação para acessar o nome
+        const { nome } = aluno;
+        console.log("Nome do aluno:", nome);
+
+        // Usando spread operator para adicionar uma nova nota (sem alterar o original)
+        const novasNotas = [...aluno.notas, 10];
+        console.log("Notas atualizadas com spread:", novasNotas);
+
+        // Podemos também atualizar o objeto, se quiser modificar o original:
+        aluno.notas = [...aluno.notas, 10];
+
+        // Recalculando a média após adicionar nova nota
+        console.log("Nova média:", aluno.calcularMedia().toFixed(2));
+
+    </script>
+</body>
+</html>
